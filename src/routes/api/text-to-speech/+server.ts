@@ -3,6 +3,10 @@ import type { RequestHandler } from './$types';
 import OpenAI from 'openai';
 import { OPENAI_API_KEY } from '$env/static/private';
 
+export const config = {
+    runtime: 'edge'
+};
+
 const openai = new OpenAI({
     apiKey: OPENAI_API_KEY
 });
@@ -21,9 +25,10 @@ export const POST: RequestHandler = async ({ request }) => {
             input: text,
         });
 
-        // Convert the raw audio data to base64
-        const buffer = Buffer.from(await mp3.arrayBuffer());
-        const base64Audio = buffer.toString('base64');
+        // Get audio data as Uint8Array
+        const audioData = new Uint8Array(await mp3.arrayBuffer());
+        // Convert to base64 without using Buffer
+        const base64Audio = btoa(String.fromCharCode.apply(null, audioData));
 
         return json({ audio: base64Audio });
     } catch (error) {

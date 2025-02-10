@@ -499,10 +499,14 @@
         audioContext = new AudioContext();
       }
 
+      // Ensure audio context is in running state
+      if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
+
       const audioData = atob(data.audio);
       const arrayBuffer = new ArrayBuffer(audioData.length);
       const view = new Uint8Array(arrayBuffer);
-
       for (let i = 0; i < audioData.length; i++) {
         view[i] = audioData.charCodeAt(i);
       }
