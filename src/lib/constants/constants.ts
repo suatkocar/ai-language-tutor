@@ -162,7 +162,7 @@ Sāksim mūsu mācību ceļojumu!`;
         return `Pozdravljeni! Jaz sem vaš AI jezikovni učitelj. Vidim, da se želite naučiti ${targetLanguage} in ste na ravni ${level}.
 Pomagal vam bom izboljšati vaš ${targetLanguage} skozi praktične pogovore.
 Ne oklevajte z vprašanji o slovnici, besedišču ali izgovorjavi.
-Začnimo našo učno pot!`;
+Začnimo naše učno pot!`;
     },
     "Albanian": (targetLanguage, level) => {
         return `Përshëndetje! Unë jam mësuesi juaj i gjuhës AI. Shoh që dëshironi të mësoni ${targetLanguage} dhe jeni në nivelin ${level}.
@@ -192,7 +192,7 @@ Le të fillojmë udhëtimin tonë të të mësuarit!`;
         return `Salam! Mən sizin AI dil müəlliminizəm. Görürəm ki, siz ${targetLanguage} öyrənmək istəyirsiniz və səviyyəniz ${level}-dir.
 Mən sizə praktik söhbətlər vasitəsilə ${targetLanguage} dilini təkmilləşdirməyə kömək edəcəyəm.
 Qrammatika, lüğət və ya tələffüz haqqında sual verməkdən çəkinməyin.
-Gəlin öyrənmə səyahətimizə başlayaq!`;
+Gəlin, öyrənmə səyahətimizə başlayaq!`;
     },
     "Georgian": (targetLanguage, level) => {
         return `გამარჯობა! მე ვარ თქვენი AI ენის მასწავლებელი. ვხედავ, რომ გსურთ ისწავლოთ ${targetLanguage} და თქვენი დონეა ${level}.
@@ -254,18 +254,18 @@ Geliň, öwreniş syýahatymyzy başlalyň!`;
 ব্যাকরণ, শব্দভাণ্ডার বা উচ্চারণ সম্পর্কে প্রশ্ন করতে দ্বিধা করবেন না।
 আসুন আমাদের শেখার যাত্রা শুরু করি!`;
     },
-    "French": [
-        "Peux-tu m'aider à pratiquer les verbes au passé?",
-        "Parlons de mes loisirs",
-        "Explique-moi la différence entre ces mots similaires...",
-        "Pouvons-nous pratiquer les expressions quotidiennes?",
-        "Aide-moi à améliorer ma prononciation de...",
-        "Faisons un jeu de rôle pour commander au restaurant",
-        "Quels sont les idiomes concernant le temps?",
-        "Peux-tu corriger ma grammaire dans cette phrase?",
-        "Pratiquons les questions d'entretien d'embauche",
-        "Enseigne-moi le vocabulaire de la technologie"
-    ]
+    "French": (targetLanguage, level) => {
+        return `Bonjour! Je suis votre professeur de langue AI. Je vois que vous voulez apprendre ${targetLanguage} et votre niveau est ${level}.
+Je vous aiderai à améliorer votre ${targetLanguage} à travers des conversations pratiques.
+N'hésitez pas à me poser des questions sur la grammaire, le vocabulaire ou la prononciation.
+Commençons notre voyage d'apprentissage!`;
+    },
+    "Turkmen": (targetLanguage, level) => {
+        return `Salam! Men siziň AI dil mugallymyňyz. Siziň ${targetLanguage} dilini öwrenmek isleýäniňizi we derejäňiziň ${level} bolandygyny görýärin.
+Men size praktiki söhbetdeşlikler arkaly ${targetLanguage} diliňizi kämilleşdirmäge kömek ederin.
+Grammatika, söz baýlygy ýa-da aýdylyş barada sorag bermekden çekinmäň.
+Geliň, öwreniş syýahatymyzy başlalyň!`;
+    },
 };
 
 // Her dil için dil öğrenmeye yönelik önerilen promptlar (kullanıcının ana dilinde)
@@ -346,13 +346,13 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Pode me ajudar a praticar verbos no passado?",
         "Vamos conversar sobre meus hobbies",
         "Explique a diferença entre estas palavras semelhantes...",
-        "Podemos pratiquer expressões cotidianas?",
+        "Podemos praticar expressões cotidianas?",
         "Ajude-me a melhorar minha pronúncia de...",
         "Vamos fazer uma simulação de pedido em restaurante",
-        "Quais são algumas expressões idiomáticas sobre tempo?",
+        "Quais são alguns modismos sobre o tempo?",
         "Pode corrigir minha gramática nesta frase?",
         "Vamos praticar perguntas de entrevista de emprego",
-        "Me ensine vocabulário sobre tecnologia"
+        "Ensine-me vocabulário sobre tecnologia"
     ],
     "Chinese (Simplified)": [
         "你能帮我练习过去时态的动词吗？",
@@ -601,7 +601,7 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Vai mēs varam praktizēt ikdienas izteicienus?",
         "Palīdziet man uzlabot izrunu...",
         "Izspēlēsim pasūtīšanu restorānā",
-        "Kādi ir idiomas par laiku?",
+        "Kādi ir idiomi par laiku?",
         "Vai varat izlabot gramatiku šajā teikumā?",
         "Patrenēsimies darba intervijas jautājumos",
         "Iemāciet man tehnoloģiju vārdu krājumu"
@@ -683,7 +683,7 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Gəlin mənim hobbilərimi müzakirə edək",
         "Bu oxşar sözlər arasındakı fərqi izah edin...",
         "Gündəlik ifadələri məşq edə bilərikmi?",
-        "Tələffüzümü yaxşılaşdırmağa kömək edin...",
+        "Mənim aýdylyşımı yaxşılaşdırmağa kömək edin...",
         "Gəlin restoranda sifariş verməyi canlandıraq",
         "Zamanla bağlı hansı idiomlar var?",
         "Bu cümlədəki qrammatikanı düzəldə bilərsinizmi?",
@@ -705,7 +705,7 @@ export const suggestedPrompts: { [key: string]: string[] } = {
     "Armenian": [
         "Կարո՞ղ եք օգնել ինձ պարապել անցյալ ժամանակի բայերը:",
         "Եկեք խոսենք իմ հոբբիների մասին",
-        "Բացատրեք տարբերությունն այս նման բառերի միջև...",
+        "Բացատրեք տարբերությունը այս նման բառերի միջև...",
         "Կարո՞ղ ենք պարապել առօրյա արտահայտություններ:",
         "Օգնեք ինձ բարելավել արտասանությունը...",
         "Եկեք դերային խաղ անենք ռեստորանում պատվեր տալու համար",
@@ -719,71 +719,58 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Менің хоббиім туралы әңгімелесейік",
         "Осы ұқсас сөздердің айырмашылығын түсіндіріңізші...",
         "Күнделікті өмірде қолданылатын сөз тіркестерін жаттықтыра аламыз ба?",
-        "Айтылымымды жақсартуға көмектесіңізші...",
+        "Менің айтылымымды жақсартуға көмектесіңізші...",
         "Мейрамханада тапсырыс берудің рөлдік ойынын ойнайық",
         "Уақыт туралы қандай идиомалар бар?",
         "Осы сөйлемдегі грамматиканы түзете аласыз ба?",
         "Жұмысқа қабылдау сұхбатының сұрақтарын жаттықтырайық",
         "Маған технология бойынша сөздік қорды үйретіңіз"
     ],
-    "Uzbek": (targetLanguage, level) => {
-        return `Salom! Men sizning AI til o'qituvchingizman. Ko'rib turibmanki, siz ${targetLanguage} tilini o'rganmoqchisiz va darajangiz ${level}.
-Men sizga amaliy suhbatlar orqali ${targetLanguage} tilini takomillashtirishga yordam beraman.
-Grammatika, lug'at yoki talaffuz haqida savol berishdan tortinmang.
-Keling, o'rganish sayohatimizni boshlaymiz!`;
-    },
-    "Kyrgyz": (targetLanguage, level) => {
-        return `Салам! Мен сиздин AI тил мугалимиңизмин. Сиздин ${targetLanguage} тилин үйрөнгүңүз келгенин жана деңгээлиңиз ${level} экенин көрүп турам.
-Мен сизге практикалык сүйлөшүүлөр аркылуу ${targetLanguage} тилин өркүндөтүүгө жардам берем.
-Грамматика, сөздүк кор же айтуу боюнча суроолорду берүүдөн тартынбаңыз.
-Окуу сапарыбызды баштайлы!`;
-    },
-    "Tajik": (targetLanguage, level) => {
-        return `Салом! Ман муаллими забони AI шумо ҳастам. Мебинам, ки шумо мехоҳед ${targetLanguage}-ро омӯзед ва сатҳи шумо ${level} аст.
-Ман ба шумо кӯмак мекунам, ки ${targetLanguage}-и худро тавассути суҳбатҳои амалӣ беҳтар кунед.
-Аз пурсидани саволҳо дар бораи грамматика, луғат ё талаффуз натарсед.
-Биёед сафари омӯзишии худро оғоз кунем!`;
-    },
-    "Turkmen": (targetLanguage, level) => {
-        return `Salam! Men siziň AI dil mugallymyňyz. Siziň ${targetLanguage} dilini öwrenmek isleýäniňizi we derejäňiziň ${level} bolandygyny görýärin.
-Men size praktiki söhbetdeşlikler arkaly ${targetLanguage} diliňizi kämilleşdirmäge kömek ederin.
-Grammatika, söz baýlygy ýa-da aýdylyş barada sorag bermekden çekinmäň.
-Geliň, öwreniş syýahatymyzy başlalyň!`;
-    },
-    "Mongolian": (targetLanguage, level) => {
-        return `Сайн байна уу! Би таны AI хэлний багш. Та ${targetLanguage} хэл сурахыг хүсч байгаа бөгөөд таны түвшин ${level} гэдгийг харж байна.
-Би танд практик яриа хэлэлцээгээр дамжуулан ${targetLanguage} хэлээ сайжруулахад тусална.
-Дүрэм зүй, үг хэллэг эсвэл дуудлагын талаар асуулт асуухаас бүү эмээгээрэй.
-Суралцах аялалаа эхэлцгээе!`;
-    },
-    "Nepali": (targetLanguage, level) => {
-        return `नमस्ते! म तपाईंको AI भाषा शिक्षक हुँ। मैले देखें कि तपाईं ${targetLanguage} सिक्न चाहनुहुन्छ र तपाईंको स्तर ${level} छ।
-म तपाईंलाई व्यावहारिक कुराकानी मार्फत ${targetLanguage} सुधार गर्न मद्दत गर्नेछु।
-व्याकरण, शब्दावली वा उच्चारणको बारेमा प्रश्न सोध्न नहिचकिचाउनुहोस्।
-हामी हाम्रो सिकाइ यात्रा सुरु गरौं!`;
-    },
-    "Bengali": (targetLanguage, level) => {
-        return `নমস্কার! আমি আপনার AI ভাষা শিক্ষক। আমি দেখছি আপনি ${targetLanguage} শিখতে চান এবং আপনার স্তর ${level}।
-আমি আপনাকে ব্যবহারিক কথোপকথনের মাধ্যমে ${targetLanguage} উন্নত করতে সাহায্য করব।
-ব্যাকরণ, শব্দভাণ্ডার বা উচ্চারণ সম্পর্কে প্রশ্ন করতে দ্বিধা করবেন না।
-আসুন আমাদের শেখার যাত্রা শুরু করি!`;
-    },
-    "French": [
-        "Peux-tu m'aider à pratiquer les verbes au passé?",
-        "Parlons de mes loisirs",
-        "Explique-moi la différence entre ces mots similaires...",
-        "Pouvons-nous pratiquer les expressions quotidiennes?",
-        "Aide-moi à améliorer ma prononciation de...",
-        "Faisons un jeu de rôle pour commander au restaurant",
-        "Quels sont les idiomes concernant le temps?",
-        "Peux-tu corriger ma grammaire dans cette phrase?",
-        "Pratiquons les questions d'entretien d'embauche",
-        "Enseigne-moi le vocabulaire de la technologie"
+    "Uzbek": [
+        "Keçmiş zamandagi fe’llarni mashq qilishda menga yordam bera olasizmi?",
+        "Mening xobbiym haqida gaplashaylik",
+        "Shu o’xshash so’zlar orasidagi farqni tushuntiring...",
+        "Kundalik iboralarini mashq qila olamizmi?",
+        "Mening talaffuzimni yaxshilashga yordam bering...",
+        "Restoranda buyurtma berishni rol o’ynaylik",
+        "Vaqt haqida qanday idiomalar bor?",
+        "Ushbu jumlada grammatikani tuzata olasizmi?",
+        "Ishga qabul qilish suhbatining savollarini mashq qilaylik",
+        "Menga texnologiya bo’yicha lug’atni o’rgating"
+    ],
+    "Kyrgyz": [
+        "Өткөн замандагы этиштиктиктерди жаттыктырууга жардам бере аласызбы?",
+        "Менин хоббиим тууралуу сүйлөшөлү",
+        "Ушул окшош сөздөрдүн айырмачылыгын түшүндүрүңүзчү...",
+        "Күндөлүк жүрүм-турумдагы сөз түркүмдөрүн жаттыктыра алабызбы?",
+        "Менин айтылымымды жакшыртууга жардам берүңүзчү...",
+        "Мейрамханада тапсырыс берүүнүн рөлдүк оюну ойноолу",
+        "Убакыт тууралуу кандай идиомалар бар?",
+        "Ушул сөйлөмдөгү грамматиканы түзөтө аласызбы?",
+        "Ишке кабыл алуу сүйлөшүүнүн суроолорун жаттыктырайлы"
+    ],
+    "Tajik": [
+        "Шумо метавонед мероҷеъ кардан, ки ман дарсҳои феълҳои замони гузаштаро мекунам?",
+        "Ба хоббиҳои ман гап задед",
+        "Фарқи ин сўзҳои шабеҳро шарҳ дихед...",
+        "Метавонем ибораҳои рўзонаро машқ кунем?",
+        "Мадад кунед, ки талаффузамро беҳтар кунам...",
+        "Дар ресторан амри хоҳишро бозӣ кунем",
+        "Идиомаҳои замон чӣ ҳастанд?",
+        "Шумо метавонед грамматикаи ин ҷумлаи манро ислоҳ кунед?",
+        "Суолҳои муколамаи кориро машқ кунем",
+        "Манро луғати технология омӯзед"
     ],
     "Turkmen": [
         "Geçmiş zamandaky işlikleri türgenleşdirmäge kömek edip bilersiňizmi?",
         "Geliň, meniň hobbylerim barada gürrüňdeşeliň",
-        "Şu meňzeş sözleriň arasyndaky tapawudy düşündiriň...",
+        "Bu meňzeş sözleriň arasyndaky tapawudy düşündiriň...",
         "Gündelik aňlatmalary türgenleşip bilerismi?",
+        "Meniň aýdylyşymy gowulandyrmaga kömek ediň...",
+        "Restorana sargyt bermek üçin rol oýunyny oýnalyň",
+        "Wagt barada haýsy idiomalar bar?",
+        "Bu sözlemde grammatikany düzedip bilersiňizmi?",
+        "Iş söhbetdeşliginiň soraglaryny türgenleşeliň",
+        "Maňa tehnologiýa boýunça söz baýlygyny öwrediň"
     ]
-}; 
+};
