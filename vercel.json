@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "framework": "sveltekit",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "env": {
+    "OPENAI_API_KEY": "@openai_api_key"
+  }
+}

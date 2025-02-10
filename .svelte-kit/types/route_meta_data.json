@@ -1,0 +1,15 @@
+{
+	"/": [],
+	"/api/chat": [
+		"src/routes/api/chat/+server.ts"
+	],
+	"/api/evaluate-speech": [
+		"src/routes/api/evaluate-speech/+server.ts"
+	],
+	"/api/speech-to-text": [
+		"src/routes/api/speech-to-text/+server.ts"
+	],
+	"/api/text-to-speech": [
+		"src/routes/api/text-to-speech/+server.ts"
+	]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="#E0F2FE"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M64 30L28 50L64 70L100 50L64 30Z" fill="#0284C7"/>
+  <path d="M85 55V75C85 82.1797 75.598 88 64 88C52.402 88 43 82.1797 43 75V55L64 67L85 55Z" fill="#0284C7"/>
+  <rect x="61" y="28" width="6" height="40" fill="#0284C7"/>
+  
+  <!-- Book -->
+  <path d="M40 80H88C92.4183 80 96 83.5817 96 88V96C96 100.418 92.4183 104 88 104H40C35.5817 104 32 100.418 32 96V88C32 83.5817 35.5817 80 40 80Z" fill="#0284C7"/>
+  <path d="M64 80V104M40 92H88" stroke="#E0F2FE" stroke-width="4"/>
+  
+  <!-- Glasses -->
+  <path d="M48 50C48 53.3137 45.3137 56 42 56C38.6863 56 36 53.3137 36 50C36 46.6863 38.6863 44 42 44C45.3137 44 48 46.6863 48 50Z" fill="#0284C7"/>
+  <path d="M92 50C92 53.3137 89.3137 56 86 56C82.6863 56 80 53.3137 80 50C80 46.6863 82.6863 44 86 44C89.3137 44 92 46.6863 92 50Z" fill="#0284C7"/>
+  <path d="M48 50H80" stroke="#0284C7" stroke-width="4"/>
+</svg> 
