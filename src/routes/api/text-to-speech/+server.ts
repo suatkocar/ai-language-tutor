@@ -19,16 +19,17 @@ export const POST: RequestHandler = async ({ request }) => {
             return json({ error: 'No text provided' }, { status: 400 });
         }
 
-        const mp3 = await openai.audio.speech.create({
+        const mp3Response = await openai.audio.speech.create({
             model: 'tts-1',
             voice: voice,
             input: text,
         });
 
-        // Get audio data as Uint8Array
-        const audioData = new Uint8Array(await mp3.arrayBuffer());
-        // Convert to base64 without using Buffer
-        const base64Audio = btoa(String.fromCharCode.apply(null, audioData));
+        // Get the audio data as an ArrayBuffer
+        const audioData = await mp3Response.arrayBuffer();
+        
+        // Convert ArrayBuffer to Base64
+        const base64Audio = Buffer.from(audioData).toString('base64');
 
         return json({ audio: base64Audio });
     } catch (error) {

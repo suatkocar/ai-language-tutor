@@ -504,14 +504,15 @@
         await audioContext.resume();
       }
 
-      const audioData = atob(data.audio);
-      const arrayBuffer = new ArrayBuffer(audioData.length);
-      const view = new Uint8Array(arrayBuffer);
-      for (let i = 0; i < audioData.length; i++) {
-        view[i] = audioData.charCodeAt(i);
+      // Convert base64 to array buffer
+      const binaryString = atob(data.audio);
+      const len = binaryString.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
       }
 
-      const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+      const audioBuffer = await audioContext.decodeAudioData(bytes.buffer);
       audioSource = audioContext.createBufferSource();
       audioSource.buffer = audioBuffer;
 
@@ -958,14 +959,15 @@
         audioSource = null;
       }
 
-      const audioData = atob(base64Audio);
-      const arrayBuffer = new ArrayBuffer(audioData.length);
-      const view = new Uint8Array(arrayBuffer);
-      for (let i = 0; i < audioData.length; i++) {
-        view[i] = audioData.charCodeAt(i);
+      // Convert base64 to array buffer
+      const binaryString = atob(base64Audio);
+      const len = binaryString.length;
+      const bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
       }
 
-      const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+      const audioBuffer = await audioContext.decodeAudioData(bytes.buffer);
       audioSource = audioContext.createBufferSource();
       audioSource.buffer = audioBuffer;
 
