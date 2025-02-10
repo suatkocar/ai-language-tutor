@@ -334,7 +334,7 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Puoi aiutarmi a esercitarmi con i verbi al passato?",
         "Parliamo dei miei hobby",
         "Spiegami la differenza tra queste parole simili...",
-        "Possiamo esercitarci con le espressioni quotidiane?",
+        "Possiamo esercitarci con le espressioni comuni?",
         "Aiutami a migliorare la mia pronuncia di...",
         "Facciamo un gioco di ruolo per ordinare al ristorante",
         "Quali sono alcuni modi di dire sul tempo?",
@@ -684,10 +684,10 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Bu oxşar sözlər arasındakı fərqi izah edin...",
         "Gündəlik ifadələri məşq edə bilərikmi?",
         "Mənim aýdylyşımı yaxşılaşdırmağa kömək edin...",
-        "Gəlin restoranda sifariş verməyi canlandıraq",
+        "Restoranda sifariş verməyi canlandıraq",
         "Zamanla bağlı hansı idiomlar var?",
         "Bu cümlədəki qrammatikanı düzəldə bilərsinizmi?",
-        "İş müsahibəsi suallarını məşq edək",
+        "Iş müsahibəsi suallarını məşq edək",
         "Mənə texnologiya ilə bağlı lüğət öyrədin"
     ],
     "Georgian": [
