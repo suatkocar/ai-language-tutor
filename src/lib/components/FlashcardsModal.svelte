@@ -17,6 +17,12 @@
   let timer: ReturnType<typeof setInterval>;
   let showFullDetails = false;
 
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  }
+
   const flashcards = [
     {
       word: "Bonjour",
@@ -105,12 +111,28 @@
   });
 </script>
 
-<div class="modal-backdrop" transition:fade on:click|self={onClose}>
-  <div class="modal-container" transition:scale>
+<div 
+  class="modal-backdrop" 
+  transition:fade 
+  on:keydown={handleKeydown} 
+  tabindex="-1" 
+  role="dialog" 
+  aria-modal="true" 
+  aria-labelledby="flashcard-modal-title"
+>
+  <div 
+    class="modal-container" 
+    transition:scale 
+    role="document"
+  >
     <div class="modal-content">
-      <button class="close-button" on:click={onClose}>×</button>
+      <button 
+        class="close-button" 
+        on:click={onClose} 
+        aria-label="Close modal"
+      >×</button>
 
-      <h2 class="text-xl font-semibold mb-6 text-center">Flashcards</h2>
+      <h2 id="flashcard-modal-title" class="text-xl font-semibold mb-6 text-center">Flashcards</h2>
 
       <div class="progress-bar mb-6">
         <div
@@ -168,9 +190,9 @@
             class="flex-1 input-field"
             disabled={!isFlipped || showFullDetails}
           />
-          <button
-            class="check-button"
-            on:click={checkAnswer}
+          <button 
+            class="check-button" 
+            on:click={checkAnswer} 
             disabled={!userInput.trim() || !isFlipped || showFullDetails}
           >
             Check
@@ -196,9 +218,9 @@
 
       <!-- Navigation -->
       <div class="flex justify-between mt-8">
-        <button
-          class="nav-button"
-          on:click={previousCard}
+        <button 
+          class="nav-button" 
+          on:click={previousCard} 
           disabled={currentCardIndex === 0}
         >
           Previous
@@ -206,9 +228,9 @@
         <div class="text-sm text-gray-600 dark:text-gray-400">
           {currentCardIndex + 1} / {flashcards.length}
         </div>
-        <button
-          class="nav-button"
-          on:click={nextCard}
+        <button 
+          class="nav-button" 
+          on:click={nextCard} 
           disabled={currentCardIndex === flashcards.length - 1}
         >
           Next
@@ -220,7 +242,7 @@
 
 <style>
   .modal-backdrop {
-    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
   }
 
   .modal-container {

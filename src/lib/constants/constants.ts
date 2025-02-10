@@ -6,7 +6,6 @@ type WelcomeMessages = {
     [key: string]: WelcomeMessageFn;
 };
 
-// Her dil için hoşgeldin mesajları (AI'nin kullanıcının ana dilinde konuşması için)
 export const welcomeMessages: WelcomeMessages = {
     "English (UK)": (targetLanguage, level) => {
         return `Hello! I'm your AI language tutor. I see you want to learn ${targetLanguage} and you're at ${level} level.
@@ -185,14 +184,14 @@ Le të fillojmë udhëtimin tonë të të mësuarit!`;
     "Belarusian": (targetLanguage, level) => {
         return `Прывітанне! Я ваш AI выкладчык мовы. Я бачу, што вы хочаце вывучыць ${targetLanguage} і ваш узровень - ${level}.
 Я дапамагу вам палепшыць ваш ${targetLanguage} праз практычныя размовы.
-Не саромейцеся задаваць пытанні пра граматыку, слоўнікавы запас ці вымаўленне.
+Невахайцеся задаваць пытанні пра граматыку, слоўнікавы запас ці вымаўленне.
 Давайце пачнем наша падарожжа ў навучанні!`;
     },
     "Azerbaijani": (targetLanguage, level) => {
         return `Salam! Mən sizin AI dil müəlliminizəm. Görürəm ki, siz ${targetLanguage} öyrənmək istəyirsiniz və səviyyəniz ${level}-dir.
-Mən sizə praktik söhbətlər vasitəsilə ${targetLanguage} dilini təkmilləşdirməyə kömək edəcəyəm.
-Qrammatika, lüğət və ya tələffüz haqqında sual verməkdən çəkinməyin.
-Gəlin, öyrənmə səyahətimizə başlayaq!`;
+Men sizə praktiki söhbətlər vasitəsilə ${targetLanguage} diliňizi kämilleşdirmäge kömek edəcəyəm.
+Grammatika, söz baýlygy ýa-da aýdylyş barada sorag bermekden çekinmäň.
+Geliň, öwreniş syýahatymyzy başlalyň!`;
     },
     "Georgian": (targetLanguage, level) => {
         return `გამარჯობა! მე ვარ თქვენი AI ენის მასწავლებელი. ვხედავ, რომ გსურთ ისწავლოთ ${targetLanguage} და თქვენი დონეა ${level}.
@@ -202,7 +201,7 @@ Gəlin, öyrənmə səyahətimizə başlayaq!`;
     },
     "Armenian": (targetLanguage, level) => {
         return `Բարև ձեզ! Ես ձեր AI լեզվի ուսուցիչն եմ: Տեսնում եմ, որ ցանկանում եք սովորել ${targetLanguage} և ձեր մակարդակը ${level} է:
-Ես կօգնեմ ձեզ բարելավել ձեր ${targetLanguage}-ը գործնական զրույցների միջոցով:
+Ես կօգնեմ ձեզ բարելավել ձեր ${targetLanguage} գործնական զրույցների միջոցով:
 Մի վախեցեք հարցեր տալ քերականության, բառապաշարի կամ արտասանության մասին:
 Եկեք սկսենք մեր ուսումնական ճանապարհորդությունը:`;
     },
@@ -213,7 +212,7 @@ Gəlin, öyrənmə səyahətimizə başlayaq!`;
 Оқу сапарымызды бастайық!`;
     },
     "Uzbek": (targetLanguage, level) => {
-        return `Salom! Men sizning AI til o'qituvchingizman. Ko'rib turibmanki, siz ${targetLanguage} tilini o'rganmoqchisiz va darajangiz ${level}.
+        return `Salom! Men sizning AI til o'qituvchingizman. Ko'rib turibmanki, siz ${targetLanguage} tilini o'rganmoqchisiz va saviyatingiz ${level}.
 Men sizga amaliy suhbatlar orqali ${targetLanguage} tilini takomillashtirishga yordam beraman.
 Grammatika, lug'at yoki talaffuz haqida savol berishdan tortinmang.
 Keling, o'rganish sayohatimizni boshlaymiz!`;
@@ -227,7 +226,7 @@ Keling, o'rganish sayohatimizni boshlaymiz!`;
     "Tajik": (targetLanguage, level) => {
         return `Салом! Ман муаллими забони AI шумо ҳастам. Мебинам, ки шумо мехоҳед ${targetLanguage}-ро омӯзед ва сатҳи шумо ${level} аст.
 Ман ба шумо кӯмак мекунам, ки ${targetLanguage}-и худро тавассути суҳбатҳои амалӣ беҳтар кунед.
-Аз пурсидани саволҳо дар бораи грамматика, луғат ё талаффуз натарсед.
+Грамматика, луғат ё талаффуз дар бораи саволҳои пурсидан аз тарс намешавед.
 Биёед сафари омӯзишии худро оғоз кунем!`;
     },
     "Turkmen": (targetLanguage, level) => {
@@ -265,10 +264,9 @@ Commençons notre voyage d'apprentissage!`;
 Men size praktiki söhbetdeşlikler arkaly ${targetLanguage} diliňizi kämilleşdirmäge kömek ederin.
 Grammatika, söz baýlygy ýa-da aýdylyş barada sorag bermekden çekinmäň.
 Geliň, öwreniş syýahatymyzy başlalyň!`;
-    },
+    }
 };
 
-// Her dil için dil öğrenmeye yönelik önerilen promptlar (kullanıcının ana dilinde)
 export const suggestedPrompts: { [key: string]: string[] } = {
     "English (UK)": [
         "Can you help me practice past tense verbs?",
@@ -287,24 +285,48 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Hobilerim hakkında konuşalım",
         "Şu benzer kelimelerin farkını açıklar mısın...",
         "Günlük konuşma kalıplarını çalışabilir miyiz?",
-        "Şu kelimelerin telaffuzunu geliştirmeme yardım et...",
+        "Telaffuzumu geliştirmeme yardım et...",
         "Restoranda sipariş verme canlandırması yapalım",
-        "Zamanla ilgili deyimler öğrenebilir miyim?",
+        "Zamanla ilgili deyimler nelerdir?",
         "Bu cümledeki dilbilgisi hatalarımı düzeltir misin?",
         "İş görüşmesi sorularını pratik yapalım",
-        "Teknoloji ile ilgili kelimeler öğret"
+        "Bana teknoloji ile ilgili kelime hazinesi öğret"
     ],
-    "Spanish": [
-        "¿Puedes ayudarme a practicar los verbos en pasado?",
-        "Hablemos de mis pasatiempos",
-        "Explícame la diferencia entre estas palabras similares...",
-        "¿Podemos practicar expresiones cotidianas?",
-        "Ayúdame a mejorar mi pronunciación de...",
-        "Hagamos un juego de roles para pedir en un restaurante",
-        "¿Cuáles son algunos modismos sobre el tiempo?",
-        "¿Puedes corregir mi gramática en esta frase?",
-        "Practiquemos preguntas de entrevista de trabajo",
-        "Enséñame vocabulario sobre tecnología"
+    "Mongolian": [
+        "Өнгөрсөн цагийн үйл үгсийг дадлага хийхэд туслаач?",
+        "Миний хобби сонирхлын талаар ярилцъя",
+        "Эдгээр төстэй үгсийн ялгааг тайлбарлаач...",
+        "Өдөр тутмын хэллэгүүдийг дадлага хийж болох уу?",
+        "Миний дуудлагыг сайжруулахад туслаач...",
+        "Зоогийн газарт захиалга өгөх дүрд тоглоё",
+        "Цагтай холбоотой ямар хэллэгүүд байдаг вэ?",
+        "Энэ өгүүлбэрийн грамматикийг засаж өгөөч?",
+        "Ажлын ярилцлагын асуултуудыг дадлага хийе",
+        "Надад технологийн үгсийн сан заагаач"
+    ],
+    "Nepali": [
+        "के तपाईं मलाई भूतकालका क्रियाहरू अभ्यास गर्न मद्दत गर्न सक्नुहुन्छ?",
+        "मेरो रुचिहरूको बारेमा कुरा गरौं",
+        "यी समान शब्दहरूको बीचको भिन्नता बताउनुहोस्...",
+        "के हामी दैनिक वाक्यांशहरू अभ्यास गर्न सक्छौं?",
+        "मेरो उच्चारण सुधार्न मद्दत गर्नुहोस्...",
+        "रेस्टुरेन्टमा अर्डर गर्न भूमिका खेलौं",
+        "समयसँग सम्बन्धित कुन मुहावराहरू छन्?",
+        "के तपाईं यो वाक्यमा व्याकरण सच्याउन सक्नुहुन्छ?",
+        "जागिर अन्तर्वार्ताका प्रश्नहरू अभ्यास गरौं",
+        "मलाई प्रविधिको शब्दावली सिकाउनुहोस्"
+    ],
+    "Bengali": [
+        "আপনি কি অতীত কালের ক্রিয়াপদগুলি অনুশীলন করতে সাহায্য করতে পারেন?",
+        "আমার শখের বিষয়ে কথা বলি",
+        "এই সমার্থক শব্দগুলির মধ্যে পার্থক্য ব্যাখ্যা করুন...",
+        "আমরা কি দৈনন্দিন অভিব্যক্তিগুলি অনুশীলন করতে পারি?",
+        "আমার উচ্চারণ উন্নত করতে সাহায্য করুন...",
+        "রেস্তোরাঁয় অর্ডার করার জন্য রোল প্লে করি",
+        "সময় সম্পর্কিত কী কী ইডিয়ম আছে?",
+        "এই বাক্যে ব্যাকরণ সংশোধন করতে পারবেন?",
+        "চাকরির ইন্টারভিউয়ের প্রশ্নগুলি অনুশীলন করি",
+        "আমাকে প্রযুক্তি সম্পর্কিত শব্দভাণ্ডার শেখান"
     ],
     "French": [
         "Peux-tu m'aider à pratiquer les verbes au passé?",
@@ -318,456 +340,13 @@ export const suggestedPrompts: { [key: string]: string[] } = {
         "Pratiquons les questions d'entretien d'embauche",
         "Enseigne-moi le vocabulaire de la technologie"
     ],
-    "German": [
-        "Kannst du mir helfen, Verben in der Vergangenheit zu üben?",
-        "Lass uns über meine Hobbys sprechen",
-        "Erkläre mir den Unterschied zwischen diesen ähnlichen Wörtern...",
-        "Können wir alltägliche Ausdrücke üben?",
-        "Hilf mir, meine Aussprache zu verbessern bei...",
-        "Lass uns ein Rollenspiel machen, um im Restaurant zu bestellen",
-        "Was sind einige Redewendungen über Zeit?",
-        "Kannst du meine Grammatik in diesem Satz korrigieren?",
-        "Üben wir Vorstellungsgespräch-Fragen",
-        "Bring mir Vokabeln über Technologie bei"
-    ],
-    "Italian": [
-        "Puoi aiutarmi a esercitarmi con i verbi al passato?",
-        "Parliamo dei miei hobby",
-        "Spiegami la differenza tra queste parole simili...",
-        "Possiamo esercitarci con le espressioni comuni?",
-        "Aiutami a migliorare la mia pronuncia di...",
-        "Facciamo un gioco di ruolo per ordinare al ristorante",
-        "Quali sono alcuni modi di dire sul tempo?",
-        "Puoi correggere la mia grammatica in questa frase?",
-        "Esercitiamoci con le domande del colloquio di lavoro",
-        "Insegnami il vocabolario sulla tecnologia"
-    ],
-    "Portuguese": [
-        "Pode me ajudar a praticar verbos no passado?",
-        "Vamos conversar sobre meus hobbies",
-        "Explique a diferença entre estas palavras semelhantes...",
-        "Podemos praticar expressões cotidianas?",
-        "Ajude-me a melhorar minha pronúncia de...",
-        "Vamos fazer uma simulação de pedido em restaurante",
-        "Quais são alguns modismos sobre o tempo?",
-        "Pode corrigir minha gramática nesta frase?",
-        "Vamos praticar perguntas de entrevista de emprego",
-        "Ensine-me vocabulário sobre tecnologia"
-    ],
-    "Chinese (Simplified)": [
-        "你能帮我练习过去时态的动词吗？",
-        "让我们谈谈我的爱好",
-        "解释一下这些相似词语的区别...",
-        "我们可以练习日常用语吗？",
-        "帮我提高这些词的发音...",
-        "让我们模拟在餐厅点餐",
-        "有哪些关于时间的习语？",
-        "你能纠正这个句子的语法吗？",
-        "练习面试问题",
-        "教我一些科技相关的词汇"
-    ],
-    "Japanese": [
-        "過去形の動詞の練習を手伝ってもらえますか？",
-        "趣味について話しましょう",
-        "これらの似ている言葉の違いを説明してください...",
-        "日常的な表現を練習できますか？",
-        "この言葉の発音を改善するのを手伝ってください...",
-        "レストランでの注文をロールプレイしましょう",
-        "時間に関する慣用句を教えてください",
-        "この文の文法を直してもらえますか？",
-        "面接の質問を練習しましょう",
-        "テクノロジーに関する語彙を教えてください"
-    ],
-    "Korean": [
-        "과거 시제 동사 연습을 도와주실 수 있나요?",
-        "취미에 대해 이야기해봐요",
-        "이 비슷한 단어들의 차이점을 설명해주세요...",
-        "일상적인 표현을 연습할 수 있을까요?",
-        "이 단어들의 발음을 개선하는 것을 도와주세요...",
-        "레스토랑에서 주문하는 역할극을 해봅시다",
-        "시간과 관련된 관용구들을 알려주세요",
-        "이 문장의 문법을 교정해주시겠어요?",
-        "면접 질문을 연습해봅시다",
-        "기술 관련 어휘를 가르쳐주세요"
-    ],
-    "Russian": [
-        "Можете помочь мне попрактиковать глаголы в прошедшем времени?",
-        "Давайте поговорим о моих хобби",
-        "Объясните разницу между этими похожими словами...",
-        "Можем ли мы попрактиковать повседневные выражения?",
-        "Помогите мне улучшить произношение...",
-        "Давайте разыграем заказ в ресторане",
-        "Какие есть идиомы о времени?",
-        "Можете исправить грамматику в этом предложении?",
-        "Давайте попрактикуем вопросы для собеседования",
-        "Научите меня словарному запасу по технологиям"
-    ],
-    "Arabic": [
-        "هل يمكنك مساعدتي في ممارسة الأفعال في الماضي؟",
-        "دعنا نتحدث عن هواياتي",
-        "اشرح الفرق بين هذه الكلمات المتشابهة...",
-        "هل يمكننا ممارسة التعبيرات اليومية؟",
-        "ساعدني في تحسين نطقي لـ...",
-        "دعنا نلعب دور الطلب في مطعم",
-        "ما هي بعض التعابير عن الوقت؟",
-        "هل يمكنك تصحيح قواعد اللغة في هذه الجملة؟",
-        "دعنا نتدرب على أسئلة المقابلة الوظيفية",
-        "علمني مفردات عن التكنولوجيا"
-    ],
-    "Hindi": [
-        "क्या आप मुझे पास्ट टेंस वर्ब्स का अभ्यास करने में मदद कर सकते हैं?",
-        "चलिए मेरे शौक के बारे में बात करते हैं",
-        "इन समान शब्दों के बीच अंतर समझाइए...",
-        "क्या हम दैनिक अभिव्यक्तियों का अभ्यास कर सकते हैं?",
-        "मेरे उच्चारण को सुधारने में मदद करें...",
-        "चलिए रेस्तरां में ऑर्डर करने का रोल-प्ले करें",
-        "समय के बारे में कुछ मुहावरे क्या हैं?",
-        "क्या आप इस वाक्य में मेरी व्याकरण सुधार सकते हैं?",
-        "चलिए जॉब इंटरव्यू के सवालों का अभ्यास करें",
-        "मुझे प्रौद्योगिकी से संबंधित शब्दावली सिखाएं"
-    ],
-    "Dutch": [
-        "Kun je me helpen met het oefenen van werkwoorden in de verleden tijd?",
-        "Laten we praten over mijn hobby's",
-        "Leg het verschil uit tussen deze vergelijkbare woorden...",
-        "Kunnen we dagelijkse uitdrukkingen oefenen?",
-        "Help me mijn uitspraak te verbeteren van...",
-        "Laten we een rollenspel doen voor het bestellen in een restaurant",
-        "Wat zijn enkele uitdrukkingen over tijd?",
-        "Kun je mijn grammatica in deze zin corrigeren?",
-        "Laten we sollicitatievragen oefenen",
-        "Leer me vocabulaire over technologie"
-    ],
-    "Swedish": [
-        "Kan du hjälpa mig att öva på verb i dåtid?",
-        "Låt oss prata om mina hobbyer",
-        "Förklara skillnaden mellan dessa liknande ord...",
-        "Kan vi öva på vardagliga uttryck?",
-        "Hjälp mig förbättra mitt uttal av...",
-        "Låt oss rollspela att beställa på en restaurang",
-        "Vilka är några tidsrelaterade idiom?",
-        "Kan du rätta min grammatik i den här meningen?",
-        "Låt oss öva på jobbintervjufrågor",
-        "Lär mig vokabulär om teknologi"
-    ],
-    "Polish": [
-        "Czy możesz pomóc mi przećwiczyć czasowniki w czasie przeszłym?",
-        "Porozmawiajmy o moich hobby",
-        "Wyjaśnij różnicę między tymi podobnymi słowami...",
-        "Czy możemy poćwiczyć codzienne wyrażenia?",
-        "Pomóż mi poprawić wymowę...",
-        "Odegrajmy scenę zamawiania w restauracji",
-        "Jakie są idiomy związane z czasem?",
-        "Czy możesz poprawić moją gramatykę w tym zdaniu?",
-        "Poćwiczmy pytania z rozmowy kwalifikacyjnej",
-        "Naucz mnie słownictwa związanego z technologią"
-    ],
-    "Greek": [
-        "Μπορείτε να με βοηθήσετε να εξασκηθώ στα ρήματα παρελθοντικού χρόνου;",
-        "Ας μιλήσουμε για τα χόμπι μου",
-        "Εξηγήστε τη διαφορά μεταξύ αυτών των παρόμοιων λέξεων...",
-        "Μπορούμε να εξασκηθούμε σε καθημερινές εκφράσεις;",
-        "Βοηθήστε με να βελτιώσω την προφορά μου στο...",
-        "Ας παίξουμε ρόλους για παραγγελία σε εστιατόριο",
-        "Ποιες είναι μερικές ιδιωματικές εκφράσεις για τον χρόνο;",
-        "Μπορείτε να διορθώσετε τη γραμματική μου σε αυτή την πρόταση;",
-        "Ας εξασκηθούμε σε ερωτήσεις συνέντευξης εργασίας",
-        "Διδάξτε μου λεξιλόγιο σχετικά με την τεχνολογία"
-    ],
-    "Chinese (Traditional)": [
-        "你能幫我練習過去時態的動詞嗎？",
-        "讓我們談談我的愛好",
-        "解釋一下這些相似詞語的區別...",
-        "我們可以練習日常用語嗎？",
-        "幫我提高這些詞的發音...",
-        "讓我們模擬在餐廳點餐",
-        "有哪些關於時間的習語？",
-        "你能糾正這個句子的語法嗎？",
-        "練習面試問題",
-        "教我一些科技相關的詞彙"
-    ],
-    "Vietnamese": [
-        "Bạn có thể giúp tôi luyện tập động từ ở thì quá khứ không?",
-        "Hãy nói về sở thích của tôi",
-        "Giải thích sự khác biệt giữa những từ tương tự này...",
-        "Chúng ta có thể thực hành các cụm từ hàng ngày không?",
-        "Giúp tôi cải thiện cách phát âm của...",
-        "Hãy đóng vai gọi món trong nhà hàng",
-        "Có những thành ngữ nào về thời gian?",
-        "Bạn có thể sửa ngữ pháp trong câu này không?",
-        "Hãy thực hành các câu hỏi phỏng vấn việc làm",
-        "Dạy tôi từ vựng về công nghệ"
-    ],
-    "Thai": [
-        "คุณช่วยฝึกกริยาในอดีตกาลได้ไหม?",
-        "มาคุยกันเกี่ยวกับงานอดิเรกของฉัน",
-        "อธิบายความแตกต่างระหว่างคำที่คล้ายกันเหล่านี้...",
-        "เราสามารถฝึกสำนวนที่ใช้ในชีวิตประจำวันได้ไหม?",
-        "ช่วยปรับปรุงการออกเสียงของฉัน...",
-        "มาเล่นบทบาทสมมติการสั่งอาหารในร้านอาหารกัน",
-        "มีสำนวนเกี่ยวกับเวลาอะไรบ้าง?",
-        "คุณช่วยแก้ไขไวยากรณ์ในประโยคนี้ได้ไหม?",
-        "มาฝึกคำถามสัมภาษณ์งานกัน",
-        "สอนคำศัพท์เกี่ยวกับเทคโนโลยีให้ฉัน"
-    ],
-    "Indonesian": [
-        "Bisakah Anda membantu saya berlatih kata kerja bentuk lampau?",
-        "Mari berbicara tentang hobi saya",
-        "Jelaskan perbedaan antara kata-kata yang mirip ini...",
-        "Bisakah kita berlatih ungkapan sehari-hari?",
-        "Bantu saya memperbaiki pengucapan...",
-        "Mari bermain peran memesan di restoran",
-        "Apa saja idiom tentang waktu?",
-        "Bisakah Anda mengoreksi tata bahasa dalam kalimat ini?",
-        "Mari berlatih pertanyaan wawancara kerja",
-        "Ajari saya kosakata tentang teknologi"
-    ],
-    "Romanian": [
-        "Mă poți ajuta să exersez verbele la timpul trecut?",
-        "Hai să vorbim despre hobby-urile mele",
-        "Explică diferența dintre aceste cuvinte similare...",
-        "Putem exersa expresii comune?",
-        "Ajută-mă să-mi îmbunătățesc pronunția pentru...",
-        "Hai să jucăm pe roluri comandarea într-un restaurant",
-        "Care sunt câteva expresii idiomatice despre timp?",
-        "Poți să-mi corectezi gramatica în această propoziție?",
-        "Hai să exersăm întrebări pentru interviul de angajare",
-        "Învață-mă vocabular despre tehnologie"
-    ],
-    "Bulgarian": [
-        "Можете ли да ми помогнете да упражня глаголите в минало време?",
-        "Нека поговорим за моите хобита",
-        "Обяснете разликата между тези подобни думи...",
-        "Можем ли да упражним ежедневни изрази?",
-        "Помогнете ми да подобря произношението си на...",
-        "Нека изиграем поръчка в ресторант",
-        "Какви са някои идиоми за време?",
-        "Можете ли да коригирате граматиката в това изречение?",
-        "Нека упражним въпроси за интервю за работа",
-        "Научете ме на технологичен речник"
-    ],
-    "Croatian": [
-        "Možete li mi pomoći vježbati glagole u prošlom vremenu?",
-        "Razgovarajmo o mojim hobijima",
-        "Objasnite razliku između ovih sličnih riječi...",
-        "Možemo li vježbati svakodnevne izraze?",
-        "Pomozite mi poboljšati izgovor...",
-        "Hajdemo odglumiti naručivanje u restoranu",
-        "Koje su neke idiome o vremenu?",
-        "Možete li ispraviti gramatiku u ovoj rečenici?",
-        "Vježbajmo pitanja za razgovor za posao",
-        "Naučite me vokabular o tehnologiji"
-    ],
-    "Slovak": [
-        "Môžete mi pomôcť precvičiť slovesá v minulom čase?",
-        "Porozprávajme sa o mojich koníčkoch",
-        "Vysvetlite rozdiel medzi týmito podobnými slovami...",
-        "Môžeme precvičiť každodenné výrazy?",
-        "Pomôžte mi zlepšiť výslovnosť...",
-        "Zahrajme si objednávanie v reštaurácii",
-        "Aké sú idiomy o čase?",
-        "Môžete opraviť gramatiku v tejto vete?",
-        "Precvičme si otázky na pracovný pohovor",
-        "Naučte ma slovnú zásobu o technológiách"
-    ],
-    "Lithuanian": [
-        "Ar galite padėti man praktikuoti veiksmažodžius būtajame laike?",
-        "Pakalbėkime apie mano pomėgius",
-        "Paaiškinkite skirtumą tarp šių panašių žodžių...",
-        "Ar galime praktikuoti kasdienius posakius?",
-        "Padėkite man pagerinti tarimą...",
-        "Suvaidinkime užsakymą restorane",
-        "Kokie yra idiomų apie laiką?",
-        "Ar galite pataisyti gramatiką šiame sakinyje?",
-        "Praktikuokime darbo pokalbio klausimus",
-        "Išmokykite mane technologijų žodyno"
-    ],
-    "Estonian": [
-        "Kas saate aidata mul harjutada mineviku tegusõnu?",
-        "Räägime minu hobidest",
-        "Selgitage erinevust nende sarnaste sõnade vahel...",
-        "Kas me saame harjutada igapäevaseid väljendeid?",
-        "Aidake mul parandada hääldust...",
-        "Mängime restoranis tellimist",
-        "Millised on mõned ajaga seotud idioomid?",
-        "Kas saate parandada grammatikat selles lauses?",
-        "Harjutame tööintervjuu küsimusi",
-        "Õpetage mulle tehnoloogiaga seotud sõnavara"
-    ],
-    "Latvian": [
-        "Vai varat palīdzēt man praktizēt darbības vārdus pagātnē?",
-        "Parunāsim par maniem vaļaspriekiem",
-        "Paskaidrojiet atšķirību starp šiem līdzīgajiem vārdiem...",
-        "Vai mēs varam praktizēt ikdienas izteicienus?",
-        "Palīdziet man uzlabot izrunu...",
-        "Izspēlēsim pasūtīšanu restorānā",
-        "Kādi ir idiomi par laiku?",
-        "Vai varat izlabot gramatiku šajā teikumā?",
-        "Patrenēsimies darba intervijas jautājumos",
-        "Iemāciet man tehnoloģiju vārdu krājumu"
-    ],
-    "Serbian": [
-        "Можете ли да ми помогнете да вежбам глаголе у прошлом времену?",
-        "Хајде да причамо о мојим хобијима",
-        "Објасните разлику између ових сличних речи...",
-        "Можемо ли да вежбамо свакодневне изразе?",
-        "Помозите ми да побољшам изговор...",
-        "Хајде да одглумимо наручивање у ресторану",
-        "Које су неке идиоме о времену?",
-        "Можете ли да исправите граматику у овој реченици?",
-        "Вежбајмо питања за разговор за посао",
-        "Научите ме речник о технологији"
-    ],
-    "Slovenian": [
-        "Ali mi lahko pomagate vaditi glagole v pretekliku?",
-        "Pogovorimo se o mojih hobijih",
-        "Pojasnite razliko med temi podobnimi besedami...",
-        "Lahko vadimo vsakdanje izraze?",
-        "Pomagajte mi izboljšati izgovorjavo...",
-        "Odigrajmo naročanje v restavraciji",
-        "Kateri so idiomi o času?",
-        "Lahko popravite slovnico v tem stavku?",
-        "Vadimo vprašanja za zaposlitveni razgovor",
-        "Naučite me besedišča o tehnologiji"
-    ],
-    "Albanian": [
-        "A mund të më ndihmoni të praktikoj foljet në kohën e shkuar?",
-        "Le të flasim për hobitë e mia",
-        "Shpjegoni ndryshimin midis këtyre fjalëve të ngjashme...",
-        "A mund të praktikojmë shprehje të përditshme?",
-        "Më ndihmoni të përmirësoj shqiptimin tim...",
-        "Le të luajmë role për të porositur në restorant",
-        "Cilat janë disa shprehje idiomatike për kohën?",
-        "A mund të korrigjoni gramatikën në këtë fjali?",
-        "Le të praktikojmë pyetjet e intervistës së punës",
-        "Më mësoni fjalor për teknologjinë"
-    ],
-    "Macedonian": [
-        "Можете ли да ми помогнете да вежбам глаголи во минато време?",
-        "Ајде да зборуваме за моите хобија",
-        "Објаснете ја разликата помеѓу овие слични зборови...",
-        "Можеме ли да вежбаме секојдневни изрази?",
-        "Помогнете ми да го подобрам изговорот...",
-        "Ајде да глумиме нарачување во ресторан",
-        "Кои се некои идиоми за време?",
-        "Можете ли да ја поправите граматиката во оваа реченица?",
-        "Да вежбаме прашања за интервју за работа",
-        "Научете ме вокабулар за технологија"
-    ],
-    "Urdu": [
-        "کیا آپ مجھے ماضی کے افعال کی مشق میں مدد کر سکتے ہیں؟",
-        "آئیے میری مشغولیات کے بارے میں بات کریں",
-        "ان مشابہ الفاظ کے درمیان فرق واضح کریں...",
-        "کیا ہم روزمرہ کے اظہارات کی مشق کر سکتے ہیں؟",
-        "میری تلفظ کو بہتر بنانے میں مدد کریں...",
-        "آئیے ریستوران میں آرڈر کرنے کی ادائیگی کریں",
-        "وقت کے بارے میں کچھ محاورے کیا ہیں؟",
-        "کیا آپ اس جملے میں گرامر درست کر سکتے ہیں؟",
-        "آئیے ملازمت کے انٹرویو کے سوالات کی مشق کریں",
-        "مجھے ٹیکنالوجی کی لغت سکھائیں"
-    ],
-    "Belarusian": [
-        "Ці можаце вы дапамагчы мне папрактыкавацца ў дзеясловах мінулага часу?",
-        "Давайце пагаворым пра мае хобі",
-        "Растлумачце розніцу паміж гэтымі падобнымі словамі...",
-        "Ці можам мы папрактыкавацца ў штодзённых выразах?",
-        "Дапамажыце мне палепшыць вымаўленне...",
-        "Давайце разыграем заказ у рэстаране",
-        "Якія ёсць ідыёмы пра час?",
-        "Ці можаце выправіць граматыку ў гэтым сказе?",
-        "Давайце папрактыкуемся ў пытаннях для сумоўя",
-        "Навучыце мяне слоўнікаваму запасу па тэхналогіях"
-    ],
-    "Azerbaijani": [
-        "Keçmiş zaman feillərini məşq etməkdə mənə kömək edə bilərsinizmi?",
-        "Gəlin mənim hobbilərimi müzakirə edək",
-        "Bu oxşar sözlər arasındakı fərqi izah edin...",
-        "Gündəlik ifadələri məşq edə bilərikmi?",
-        "Mənim aýdylyşımı yaxşılaşdırmağa kömək edin...",
-        "Restoranda sifariş verməyi canlandıraq",
-        "Zamanla bağlı hansı idiomlar var?",
-        "Bu cümlədəki qrammatikanı düzəldə bilərsinizmi?",
-        "Iş müsahibəsi suallarını məşq edək",
-        "Mənə texnologiya ilə bağlı lüğət öyrədin"
-    ],
-    "Georgian": [
-        "შეგიძლიათ დამეხმაროთ წარსული დროის ზმნების პრაქტიკაში?",
-        "მოდი ვისაუბროთ ჩემს ჰობიზე",
-        "ახსენით განსხვავება ამ მსგავს სიტყვებს შორის...",
-        "შეგვიძლია ვივარჯიშოთ ყოველდღიურ გამოთქმებში?",
-        "დამეხმარეთ გამოთქმის გაუმჯობესებაში...",
-        "მოდი გავითამაშოთ რესტორანში შეკვეთა",
-        "რა იდიომებია დროის შესახებ?",
-        "შეგიძლიათ გაასწოროთ გრამატიკა ამ წინადადებაში?",
-        "ვივარჯიშოთ სამსახურის ინტერვიუს კითხვებში",
-        "მასწავლეთ ტექნოლოგიებთან დაკავშირებული ლექსიკა"
-    ],
-    "Armenian": [
-        "Կարո՞ղ եք օգնել ինձ պարապել անցյալ ժամանակի բայերը:",
-        "Եկեք խոսենք իմ հոբբիների մասին",
-        "Բացատրեք տարբերությունը այս նման բառերի միջև...",
-        "Կարո՞ղ ենք պարապել առօրյա արտահայտություններ:",
-        "Օգնեք ինձ բարելավել արտասանությունը...",
-        "Եկեք դերային խաղ անենք ռեստորանում պատվեր տալու համար",
-        "Ո՞ր դարձվածքներն են ժամանակի մասին:",
-        "Կարո՞ղ եք ուղղել քերականությունն այս նախադասության մեջ:",
-        "Պարապենք աշխատանքային հարցազրույցի հարցերը",
-        "Սովորեցրեք ինձ տեխնոլոգիական բառապաշար"
-    ],
-    "Kazakh": [
-        "Өткен шақ етістіктерін жаттықтыруға көмектесе аласыз ба?",
-        "Менің хоббиім туралы әңгімелесейік",
-        "Осы ұқсас сөздердің айырмашылығын түсіндіріңізші...",
-        "Күнделікті өмірде қолданылатын сөз тіркестерін жаттықтыра аламыз ба?",
-        "Менің айтылымымды жақсартуға көмектесіңізші...",
-        "Мейрамханада тапсырыс берудің рөлдік ойынын ойнайық",
-        "Уақыт туралы қандай идиомалар бар?",
-        "Осы сөйлемдегі грамматиканы түзете аласыз ба?",
-        "Жұмысқа қабылдау сұхбатының сұрақтарын жаттықтырайық",
-        "Маған технология бойынша сөздік қорды үйретіңіз"
-    ],
-    "Uzbek": [
-        "Keçmiş zamandagi fe’llarni mashq qilishda menga yordam bera olasizmi?",
-        "Mening xobbiym haqida gaplashaylik",
-        "Shu o’xshash so’zlar orasidagi farqni tushuntiring...",
-        "Kundalik iboralarini mashq qila olamizmi?",
-        "Mening talaffuzimni yaxshilashga yordam bering...",
-        "Restoranda buyurtma berishni rol o’ynaylik",
-        "Vaqt haqida qanday idiomalar bor?",
-        "Ushbu jumlada grammatikani tuzata olasizmi?",
-        "Ishga qabul qilish suhbatining savollarini mashq qilaylik",
-        "Menga texnologiya bo’yicha lug’atni o’rgating"
-    ],
-    "Kyrgyz": [
-        "Өткөн замандагы этиштиктиктерди жаттыктырууга жардам бере аласызбы?",
-        "Менин хоббиим тууралуу сүйлөшөлү",
-        "Ушул окшош сөздөрдүн айырмачылыгын түшүндүрүңүзчү...",
-        "Күндөлүк жүрүм-турумдагы сөз түркүмдөрүн жаттыктыра алабызбы?",
-        "Менин айтылымымды жакшыртууга жардам берүңүзчү...",
-        "Мейрамханада тапсырыс берүүнүн рөлдүк оюну ойноолу",
-        "Убакыт тууралуу кандай идиомалар бар?",
-        "Ушул сөйлөмдөгү грамматиканы түзөтө аласызбы?",
-        "Ишке кабыл алуу сүйлөшүүнүн суроолорун жаттыктырайлы"
-    ],
-    "Tajik": [
-        "Шумо метавонед мероҷеъ кардан, ки ман дарсҳои феълҳои замони гузаштаро мекунам?",
-        "Ба хоббиҳои ман гап задед",
-        "Фарқи ин сўзҳои шабеҳро шарҳ дихед...",
-        "Метавонем ибораҳои рўзонаро машқ кунем?",
-        "Мадад кунед, ки талаффузамро беҳтар кунам...",
-        "Дар ресторан амри хоҳишро бозӣ кунем",
-        "Идиомаҳои замон чӣ ҳастанд?",
-        "Шумо метавонед грамматикаи ин ҷумлаи манро ислоҳ кунед?",
-        "Суолҳои муколамаи кориро машқ кунем",
-        "Манро луғати технология омӯзед"
-    ],
     "Turkmen": [
         "Geçmiş zamandaky işlikleri türgenleşdirmäge kömek edip bilersiňizmi?",
         "Geliň, meniň hobbylerim barada gürrüňdeşeliň",
         "Bu meňzeş sözleriň arasyndaky tapawudy düşündiriň...",
         "Gündelik aňlatmalary türgenleşip bilerismi?",
         "Meniň aýdylyşymy gowulandyrmaga kömek ediň...",
-        "Restorana sargyt bermek üçin rol oýunyny oýnalyň",
+        "Restoranda sargyt bermek üçin rol oýunyny oýnalyň",
         "Wagt barada haýsy idiomalar bar?",
         "Bu sözlemde grammatikany düzedip bilersiňizmi?",
         "Iş söhbetdeşliginiň soraglaryny türgenleşeliň",

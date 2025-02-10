@@ -4,66 +4,104 @@
   export let selectedTopic: string;
   export let onSelectLevel: (level: string) => void;
   export let onSelectTopic: (topic: string) => void;
+
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  }
+
+  // Handle initial focus when modal opens
+  import { onMount } from 'svelte';
+  let modalContainer: HTMLElement;
+
+  onMount(() => {
+    if (modalContainer) {
+      const firstButton = modalContainer.querySelector('button');
+      if (firstButton) firstButton.focus();
+    }
+  });
 </script>
 
-<div class="modal-overlay" on:click={onClose}>
-  <div class="modal-content" on:click|stopPropagation>
-    <div class="modal-header">
-      <h3 class="text-lg font-semibold">Grammar Exercises</h3>
-      <button class="modal-close" on:click={onClose}>×</button>
-    </div>
-    <div class="modal-body">
+<div 
+  class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+  on:keydown={handleKeydown}
+  bind:this={modalContainer}
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+>
+  <div 
+    class="modal-content bg-white rounded-lg p-6 max-w-2xl w-full mx-4"
+    role="document"
+  >
+    <header class="modal-header flex justify-between items-center mb-4">
+      <h2 id="modal-title" class="text-lg font-semibold">Grammar Exercises</h2>
+      <button 
+        class="modal-close text-gray-500 hover:text-gray-700" 
+        on:click={onClose}
+        aria-label="Close modal"
+      >×</button>
+    </header>
+    <main class="modal-body">
       <div class="p-4 space-y-4">
-        <div class="exercise-levels">
+        <div class="exercise-levels" role="group" aria-label="Difficulty levels">
           <button 
             class="level-button beginner {selectedLevel === 'Beginner' ? 'active' : ''}"
             on:click={() => onSelectLevel('Beginner')}
+            aria-pressed={selectedLevel === 'Beginner'}
           >
-            <span class="level-icon">🌱</span>
+            <span class="level-icon" aria-hidden="true">🌱</span>
             <span class="level-text">Beginner</span>
           </button>
           <button 
             class="level-button intermediate {selectedLevel === 'Intermediate' ? 'active' : ''}"
             on:click={() => onSelectLevel('Intermediate')}
+            aria-pressed={selectedLevel === 'Intermediate'}
           >
-            <span class="level-icon">🌿</span>
+            <span class="level-icon" aria-hidden="true">🌿</span>
             <span class="level-text">Intermediate</span>
           </button>
           <button 
             class="level-button advanced {selectedLevel === 'Advanced' ? 'active' : ''}"
             on:click={() => onSelectLevel('Advanced')}
+            aria-pressed={selectedLevel === 'Advanced'}
           >
-            <span class="level-icon">🌳</span>
+            <span class="level-icon" aria-hidden="true">🌳</span>
             <span class="level-text">Advanced</span>
           </button>
         </div>
-        <div class="grammar-topics">
+        <div class="grammar-topics" role="group" aria-label="Grammar topics">
           <button 
             class="grammar-topic {selectedTopic === 'Present Tense' ? 'active' : ''}"
             on:click={() => onSelectTopic('Present Tense')}
+            aria-pressed={selectedTopic === 'Present Tense'}
           >
-            <span class="topic-icon">🕒</span>
+            <span class="topic-icon" aria-hidden="true">🕒</span>
             <span class="topic-text">Present Tense</span>
           </button>
           <button 
             class="grammar-topic {selectedTopic === 'Past Tense' ? 'active' : ''}"
             on:click={() => onSelectTopic('Past Tense')}
+            aria-pressed={selectedTopic === 'Past Tense'}
           >
-            <span class="topic-icon">⏰</span>
+            <span class="topic-icon" aria-hidden="true">⏰</span>
             <span class="topic-text">Past Tense</span>
           </button>
           <button 
             class="grammar-topic {selectedTopic === 'Future Tense' ? 'active' : ''}"
             on:click={() => onSelectTopic('Future Tense')}
+            aria-pressed={selectedTopic === 'Future Tense'}
           >
-            <span class="topic-icon">📅</span>
+            <span class="topic-icon" aria-hidden="true">📅</span>
             <span class="topic-text">Future Tense</span>
           </button>
           <button 
             class="grammar-topic {selectedTopic === 'Conditionals' ? 'active' : ''}"
             on:click={() => onSelectTopic('Conditionals')}
+            aria-pressed={selectedTopic === 'Conditionals'}
           >
-            <span class="topic-icon">🔄</span>
+            <span class="topic-icon" aria-hidden="true">🔄</span>
             <span class="topic-text">Conditionals</span>
           </button>
         </div>
@@ -73,7 +111,7 @@
           </button>
         {/if}
       </div>
-    </div>
+    </main>
   </div>
 </div>
 

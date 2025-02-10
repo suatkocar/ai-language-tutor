@@ -11,46 +11,84 @@
     { id: 'business-writing', title: 'Business Writing', icon: '💼' },
     { id: 'creative-writing', title: 'Creative Writing', icon: '📖' }
   ];
+
+  function handleKeydown(e: KeyboardEvent) {
+    if (e.key === 'Escape') {
+      onClose();
+    }
+  }
+
+  // Handle initial focus when modal opens
+  import { onMount } from 'svelte';
+  let modalContainer: HTMLElement;
+
+  onMount(() => {
+    if (modalContainer) {
+      const firstButton = modalContainer.querySelector('button');
+      if (firstButton) firstButton.focus();
+    }
+  });
 </script>
 
-<div class="modal-overlay" on:click={onClose}>
-  <div class="modal-content" on:click|stopPropagation>
-    <div class="modal-header">
-      <h3 class="text-lg font-semibold">Writing Workshop</h3>
-      <button class="modal-close" on:click={onClose}>×</button>
-    </div>
-    <div class="modal-body">
-      <div class="p-4 space-y-4">
-        <div class="writing-prompts">
-          {#each topics as topic}
-            <button 
-              class="writing-prompt {selectedTopic === topic.title ? 'active' : ''}"
-              on:click={() => onSelectTopic(topic.title)}
-            >
-              <span class="topic-icon">{topic.icon}</span>
-              <span class="topic-text">{topic.title}</span>
-            </button>
-          {/each}
-        </div>
-        {#if selectedTopic}
-          <div class="writing-area">
-            <textarea
-              bind:value={writingContent}
-              placeholder="Start writing here..."
-              class="writing-input"
-              rows="6"
-            ></textarea>
-            <button 
-              class="submit-writing-button"
+<div 
+  class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+  on:keydown={handleKeydown}
+  bind:this={modalContainer}
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="writing-modal-title"
+>
+  <div 
+    class="modal-content bg-white rounded-lg p-6 max-w-2xl w-full mx-4"
+    role="document"
+  >
+    <header class="modal-header flex justify-between items-center mb-4">
+      <h2 id="writing-modal-title" class="text-lg font-semibold">Writing Workshop</h2>
+      <button 
+        class="modal-close text-gray-500 hover:text-gray-700" 
+        on:click={onClose}
+        aria-label="Close modal"
+      >×</button>
+    </header>
+    <main class="modal-body space-y-4">
+      <div class="writing-prompts grid grid-cols-2 gap-4" role="group" aria-label="Writing topics">
+        {#each topics as topic}
+          <button 
+            class="writing-prompt p-4 rounded-lg border {selectedTopic === topic.title ? 'border-blue-500' : 'border-gray-200'}"
+            on:click={() => onSelectTopic(topic.title)}
+            aria-pressed={selectedTopic === topic.title}
+          >
+            <span class="topic-icon text-2xl" aria-hidden="true">{topic.icon}</span>
+            <span class="topic-text block mt-2">{topic.title}</span>
+          </button>
+        {/each}
+      </div>
+
+      {#if selectedTopic}
+        <div class="writing-area">
+          <label for="writing-content" class="block text-sm font-medium text-gray-700 mb-2">
+            Write your {selectedTopic.toLowerCase()} here:
+          </label>
+          <textarea
+            id="writing-content"
+            bind:value={writingContent}
+            class="w-full h-48 p-4 border rounded-lg focus:ring-2 focus:ring-blue-500"
+            placeholder="Start writing..."
+            aria-label="Writing content area"
+          ></textarea>
+          <div class="mt-4 flex justify-end">
+            <button
+              class="submit-button px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
               on:click={onSubmit}
-              disabled={!writingContent.trim()}
+              disabled={!writingContent}
+              aria-disabled={!writingContent}
             >
-              Submit Writing
+              Submit
             </button>
           </div>
-        {/if}
-      </div>
-    </div>
+        </div>
+      {/if}
+    </main>
   </div>
 </div>
 
