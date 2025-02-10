@@ -611,7 +611,7 @@
       if (savedDarkMode) {
         $darkMode = savedDarkMode === 'true';
       } else {
-        $darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        $darkMode = false;
       }
 
       if ($darkMode) {
