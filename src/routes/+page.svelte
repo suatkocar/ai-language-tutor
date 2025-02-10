@@ -1061,7 +1061,7 @@
   <div
     class="flex-1 flex bg-gray-50 dark:bg-gray-900 mt-14
     {isLeftSidebarOpen ? 'md:ml-64 sm:ml-48 ml-48' : ''} 
-    {isRightSidebarOpen ? 'md:mr-64' : ''} 
+    {isRightSidebarOpen ? 'md:mr-48 sm:mr-48 mr-48' : ''} 
     transition-all duration-200 pb-12"
   >
     <div class="flex-1 flex flex-col overflow-hidden bg-gray-50 dark:bg-gray-900">

@@ -195,4 +195,14 @@
   .tips-wrapper:hover {
     animation-play-state: paused;
   }
+
+  :global(.overflow-y-auto) {
+    -ms-overflow-style: none;  /* IE ve Edge için */
+    scrollbar-width: none;     /* Firefox için */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  :global(.overflow-y-auto::-webkit-scrollbar) {
+    display: none;  /* Chrome, Safari ve Opera için */
+  }
 </style>

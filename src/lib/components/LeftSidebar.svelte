@@ -80,7 +80,7 @@
 
 <div
   transition:fly={{ x: -300, duration: 600 }}
-  class="fixed inset-y-0 left-0 w-48 md:w-64 sm:w-48 bg-white dark:bg-gray-800 shadow-lg z-30 mt-14 flex flex-col"
+  class="fixed top-14 left-0 w-48 md:w-64 sm:w-48 h-[calc(100vh-3.5rem)] bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto z-30"
 >
   <!-- Categories -->
   <div class="p-4 border-b border-gray-200 dark:border-gray-700">
@@ -187,11 +187,11 @@
   </div>
 
   <!-- Recent Conversations -->
-  <div class="flex-1 overflow-y-auto p-4">
-    <h2 class="text-sm font-medium dark:text-white mb-4">
+  <div class="flex-1 overflow-y-auto p-4 h-[calc(100vh-16rem)] overscroll-contain">
+    <h2 class="text-sm font-medium dark:text-white mb-4 sticky top-0 bg-white dark:bg-gray-800">
       Recent Conversations
     </h2>
-    <div class="space-y-2">
+    <div class="space-y-2 overflow-y-auto touch-pan-y">
       {#each conversations as conv}
         <div
           class="conversation-item relative {currentlySwipedId === conv.id ? 'swiped' : ''}"
@@ -370,5 +370,16 @@
     .conversation-item.swiped button:first-child {
       transform: translateX(-32px);
     }
+  }
+
+  /* Scrollbar'ı gizle ama işlevselliğini koru */
+  :global(.overflow-y-auto) {
+    -ms-overflow-style: none;  /* IE ve Edge için */
+    scrollbar-width: none;     /* Firefox için */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  :global(.overflow-y-auto::-webkit-scrollbar) {
+    display: none;  /* Chrome, Safari ve Opera için */
   }
 </style>
