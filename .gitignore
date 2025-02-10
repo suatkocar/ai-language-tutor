@@ -153,3 +153,8 @@ ehthumbs.db
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# SvelteKit build output
+.svelte-kit/
+build/
+.vercel/
